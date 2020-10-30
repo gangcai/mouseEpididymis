@@ -1,0 +1,20 @@
+library(Seurat)
+library(cowplot)
+library(dplyr)
+library(ggplot2)
+mycolor=colorRampPalette(c("tomato2","snow1","skyblue2"))(50)
+obj = readRDS("../C2_mouse_epididymis.rds")
+names=list('0'="CN1",'1'="CN2","2"="CN3","3"="CN4")
+clusters=levels(obj)
+
+#rename the clusters
+new.names <- sapply(clusters,function(x){names[[as.character(x)]]})
+obj <- RenameIdents(obj,new.names)
+
+obj.markers <- read.table("../C2_mouse_epididymis_markers.tsv",header=T,sep="\t")
+top10 <- obj.markers %>% group_by(cluster) %>% top_n(n = 10, wt = avg_logFC)
+genes=as.character(top10$gene)
+pdf("TopGenes_SingleCell_Heatmap.pdf",width=10,height=15)
+p <- DoHeatmap(obj, features = genes, assay = "RNA",slot = "scale.data")+ scale_fill_gradientn(colours = rev(mycolor))
+print(p)
+dev.off()

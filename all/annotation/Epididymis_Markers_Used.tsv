@@ -1,0 +1,27 @@
+CellType	Gene
+Principal Cell	Aqp9
+Principal Cell	Cftr
+Myoid Cell	Acta2
+Myoid Cell	Myh11
+Fibroblasts	Col1a1
+Clear Cell	Atp6v1b1
+Clear Cell	Foxi1
+Narrow Cell	Car2
+Narrow Cell	Foxi1
+Basal Cell	Krt5
+Basal Cell	Cldn1
+Macrophages	Adgre1
+Macrophages	Itgam
+Macrophages	Cd68
+Monocytes	Csf1r
+Monocytes	Lyz2
+Red Blood Cells	Hba-a1
+Red Blood Cells	Hba-a2
+Red Blood Cells	Hbb-bs
+Sperm	Tnp2
+Sperm	Tnp1
+Endothelial Cells	Pecam1
+Endothelial Cells	Eng
+Endothelial Cells	Cdh5
+Halo/T Cell	Cd4
+Halo/T Cell	Cd8a
