@@ -7,6 +7,7 @@ mycolor=colorRampPalette(c("tomato2","snow1","skyblue2"))(50)
 
 obj=readRDS("../../../mouse_epididymis.rds")
 clusters=obj$seurat_clusters
+regions=obj$regions
 cells.all=names(clusters)
 ages=obj$ages
 data.rpm=obj@assays$RNA@data #log1p(RPM)
@@ -23,7 +24,7 @@ for(cid in c(0:7)){
 		genes_top=top10$Gene
 		genes_bottom=bottom10$Gene
 		genes=c(genes_top,genes_bottom)
-		cells=cells.all[clusters == cid]
+		cells=cells.all[clusters == cid & regions == region]
 		ht=5
 		if(length(genes)<20){
 		 ht=ht*(length(genes)/20)
