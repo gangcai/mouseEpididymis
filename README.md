@@ -1,5 +1,5 @@
 # mouseEpididymis
-Code for the data analyzing in mouse epididymis scRNA-seq project
+Code for the data analyzing in mouse epididymis scRNA-seq project,including data pre-processing, data visualization, and single-cell data analyzing.
 
 ## folder "all"
 code for analyzing all filtered cells (including red blood cells)
